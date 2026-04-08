@@ -17,6 +17,11 @@ def div(a, b):
 def exp(a, b):
     return a ** b
 
+def square_root(a):
+    if a < 0:
+        raise ValueError("Cannot take square root of negative number")
+    return math.sqrt(a)
+
 def logarithm(n, base):
     if n <= 0:
         raise ValueError("Logarithm argument must be greater than 0")
