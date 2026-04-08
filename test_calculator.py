@@ -1,6 +1,6 @@
 import unittest
 import math
-from calculator import add, sub, mul, div, log, exp
+from calculator import add, sub, mul, div, log, exp, square_root
 
 class TestCalculator(unittest.TestCase):
 
@@ -30,6 +30,12 @@ class TestCalculator(unittest.TestCase):
             log(1, 10)
         with self.assertRaises(ValueError):
             log(10, -5)
+
+    def test_square_root(self):
+        self.assertEqual(square_root(16), 4.0)
+        self.assertEqual(square_root(0), 0.0)
+        with self.assertRaises(ValueError):
+            square_root(-1)
 
 if __name__ == '__main__':
     unittest.main()
